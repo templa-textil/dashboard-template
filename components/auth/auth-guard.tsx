@@ -58,27 +58,25 @@ export function AuthGuard({
     return (
       <RedirectHandler
         redirectTo={fallbackTo}
-        loadingMessage="Redirecting to sign in..."
+        loadingMessage="Redirigiendo a inicio de sesión..."
       />
     );
   }
 
-  // Show loading while redirecting non-admin users
   if (requireAdmin && session?.user.role !== "ADMIN") {
     return (
       <RedirectHandler
         redirectTo="/dashboard"
-        loadingMessage="Insufficient permissions..."
+        loadingMessage="Permisos insuficientes..."
       />
     );
   }
 
-  // Show loading while redirecting authenticated users from public pages
   if (!requireAuth && status === "authenticated") {
     return (
       <RedirectHandler
         redirectTo={redirectTo}
-        loadingMessage="Already signed in..."
+        loadingMessage="Redirigiendo a la página principal..."
       />
     );
   }

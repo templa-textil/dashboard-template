@@ -16,7 +16,7 @@ export function DashboardHeader() {
           onClick={() => signOut({ callbackUrl: "/auth/signin" })}
         >
           <LogOut className="h-4 w-4 mr-2" />
-          Sign Out
+          Salir
         </Button>
       </div>
     </header>
